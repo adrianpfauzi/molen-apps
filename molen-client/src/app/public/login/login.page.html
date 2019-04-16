@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Selamat Datang di Molen - Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    
+  <ion-item>
+    <ion-label position="stacked">Email</ion-label>
+    <ion-input type="text" [(ngModel)]="logUser.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Password</ion-label>
+    <ion-input [type]="passwordType" [(ngModel)]="logUser.password"></ion-input>
+    <ion-icon name="eye" color="grey" slot="end" (click)="togglePassword()"></ion-icon>
+  </ion-item>
+
+</ion-card>
+
+  <ion-button expand="block" (click)="login()">Login</ion-button>
+  <ion-button expand="block" fill="outline" (click)="registerPage()">Register</ion-button>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>Daftar Lapak</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor = "let lapak of lapakList">
+    <ion-item>
+          <ion-label><b>{{lapak.nama}}</b></ion-label>
+          <ion-text>
+            {{lapak.keterangan}}<br>
+          </ion-text>
+    </ion-item>
+  </ion-card>
+</ion-content>

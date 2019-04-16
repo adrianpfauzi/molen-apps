@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Register User</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label position="floating">Nama</ion-label>
+    <ion-input type="text" [(ngModel)]="data.nama"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input [type]="passwordType" [(ngModel)]="data.password"></ion-input>
+    <ion-icon name="eye" color="grey" slot="end" (click)="togglePassword()"></ion-icon>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input type="text" [(ngModel)]="data.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Tanggal Lahir</ion-label>
+    <ion-input type="date" display="MM/DD/YYYY" [(ngModel)]="data.tgl_lahir"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Nomor Telepon</ion-label>
+    <ion-input type="text" [(ngModel)]="data.no_telp"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Alamat</ion-label>
+    <ion-input type="text" [(ngModel)]="data.alamat"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Kota</ion-label>
+    <ion-input type="text" [(ngModel)]="data.kota"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Provinsi</ion-label>
+    <ion-input type="text" [(ngModel)]="data.provinsi"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" color="secondary" (click)="addUser()">Register</ion-button>
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>komentar-add</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item>
+        <ion-label position="floating">Nomor User</ion-label>
+        <ion-input type="text" [(ngModel)]="data.id_user"></ion-input>
+      </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Nama User</ion-label>
+        <ion-input type="text" [(ngModel)]="data.nama"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Isi Komentar</ion-label>
+        <ion-input type="textarea" [(ngModel)]="data.keterangan"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> Nomor Barang</ion-label>
+        <ion-input type="text" [(ngModel)]="data.id_barang"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" (click)="addComment()">Submit</ion-button>
+</ion-content>

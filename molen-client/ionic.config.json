@@ -1,0 +1,7 @@
+{
+  "name": "PUTS_001",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
