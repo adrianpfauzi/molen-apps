@@ -20,7 +20,7 @@ import { KomentarAddPage } from './komentar-add/komentar-add.page'
 import { HttpClientModule} from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { ProfileUpdatePage } from './profile-update/profile-update.page';
-import { Camera } from '@ionic-native/Camera/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';

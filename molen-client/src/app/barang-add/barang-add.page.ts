@@ -37,8 +37,19 @@ export class BarangAddPage implements OnInit {
   };
 
   
-  constructor(private ref: ChangeDetectorRef, private camera: Camera,private actionSheetController: ActionSheetController,private storage:Storage,public molenMain: MolenMainService, public modalCtrl:ModalController, public molenUser:MolenUserService
-    ,private file : File, private http : HttpClient, private webView: WebView, private fileEntry : FileEntry, private filePath : FilePath, private toastController : ToastController ) { 
+  constructor(private ref: ChangeDetectorRef, 
+    private camera: Camera,
+    private actionSheetController: ActionSheetController,
+    private storage:Storage,
+    public molenMain: MolenMainService, 
+    public modalCtrl:ModalController, 
+    public molenUser:MolenUserService,
+    private file : File, 
+    //private http : HttpClient, 
+    private webView: WebView, 
+    //private fileEntry : FileEntry, 
+    private filePath : FilePath, 
+    private toastController : ToastController ) { 
     this.ambildata();
   }
 

@@ -52,5 +52,20 @@
         <ion-textarea type="textarea" [(ngModel)]="data.keterangan"></ion-textarea>
       </ion-item>
 
+        <ion-label position="floating">Foto</ion-label>
+        
+        <ion-item *ngFor="let img of images; index as pos" text-wrap>
+          <ion-thumbnail slot="start">
+            <ion-img [src]="img.path"></ion-img>
+          </ion-thumbnail>
+          <ion-label>
+            {{img.name}}
+          </ion-label>
+        </ion-item>
+        <ion-button fill = "clear" expand="full" color="light" (click)="selectImage()">
+          <ion-icon slot="start" name="camera"></ion-icon>
+          Select Image
+        </ion-button>
+
       <ion-button expand="block" (click)="addBarang()">Submit</ion-button>
 </ion-content>
