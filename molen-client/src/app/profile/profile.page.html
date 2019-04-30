@@ -13,36 +13,31 @@
 <ion-content padding>
 <ion-card *ngFor= "let data of userProf">
   <ion-item>
-      <ion-label position="stacked"><b>Nomor ID User</b></ion-label>
-      <ion-input type="text" [(ngModel)]="data.id_user" readonly></ion-input>
-  </ion-item>
-
-  <ion-item>
       <ion-label position="stacked"><b>Email</b></ion-label>
-      <ion-input type="text" [(ngModel)]="data.email" readonly></ion-input>
+      <ion-input type="text" [(ngModel)]="data.email" readonly disabled></ion-input>
   </ion-item>
 
   <ion-item>
       <ion-label position="stacked"><b>Nama</b></ion-label>
-      <ion-input type="text" [(ngModel)]="data.nama" readonly></ion-input>
+      <ion-input type="text" [(ngModel)]="data.nama" readonly disabled></ion-input>
   </ion-item>
-
+      
   <ion-item>
       <ion-label position="stacked"><b>Tanggal Lahir</b></ion-label>
-      <ion-input type="text" [(ngModel)]="data.tgl_lahir" readonly></ion-input>
-  </ion-item>
-
-  <ion-item>
-      <ion-label position="stacked"><b>Nomor Telepon</b></ion-label>
-      <ion-input type="text" [(ngModel)]="data.no_telp" readonly></ion-input>
-  </ion-item>
-
-  <ion-item>
-      <ion-label position="stacked"><b>Alamat</b></ion-label>
-      <ion-input type="text" [(ngModel)]="data.alamat" readonly></ion-input>
-      <ion-input type="text" [(ngModel)]="data.kota" readonly></ion-input>
-      <ion-input type="text" [(ngModel)]="data.provinsi" readonly></ion-input>
+      <ion-datetime type="text" [(ngModel)]="data.tgl_lahir" readonly disabled></ion-datetime>
   </ion-item>
   
+  <ion-item>
+      <ion-label position="stacked"><b>Nomor Telepon</b></ion-label>
+      <ion-input type="text" [(ngModel)]="data.no_telp" readonly disabled></ion-input>
+  </ion-item>
+  
+  <ion-item>
+      <ion-label position="stacked"><b>Alamat</b></ion-label>
+      <ion-input type="text" [(ngModel)]="data.alamat" readonly disabled></ion-input>
+      <ion-input type="text" [(ngModel)]="data.kota" readonly disabled></ion-input>
+      <ion-input type="text" [(ngModel)]="data.provinsi" readonly disabled></ion-input>
+  </ion-item>
+
 </ion-card>
 </ion-content>
