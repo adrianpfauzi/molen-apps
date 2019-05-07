@@ -3,6 +3,7 @@ import { MolenUserService } from 'src/app/molen-user.service';
 import { Response } from '@angular/http';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
+import { ReactiveFormsModule} from '@angular/forms';
 
 
 @Component({
@@ -17,8 +18,9 @@ export class LoginPage implements OnInit {
   passwordShown: boolean = false;
   passwordType: string = 'password';
   
-  constructor(public molenUser: MolenUserService, public router:Router, private menuCtrl: MenuController) { 
   
+  constructor(public molenUser: MolenUserService, public router:Router, private menuCtrl: MenuController) { 
+    
   }
 
   ngOnInit() {
@@ -28,6 +30,8 @@ export class LoginPage implements OnInit {
     this.molenUser.loginUser(this.logUser).subscribe((response: Response) => {
       if(response) {
         this.molenUser.login(this.logUser);
+        console.log(response);
+        console.log(this.logUser);
       }
       else {
         console.log("Login Error");

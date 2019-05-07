@@ -30,9 +30,7 @@ export class ProfileUpdatePage implements OnInit {
     this.userProf = this.navParams.data.value;
     console.log(this.userProf);
     this.data.id_user = this.userProf[0].id_user;
-    console.log(this.userProf[0].id_user);
     this.data.email = this.userProf[0].email;
-    console.log(this.userProf[0].email);
     this.data.password = this.userProf[0].password;
     this.data.nama = this.userProf[0].nama;
     this.data.tgl_lahir = this.userProf[0].tgl_lahir;
@@ -49,7 +47,7 @@ export class ProfileUpdatePage implements OnInit {
     console.log(this.data);
     this.molenUser.updateUser(this.data).subscribe((response: Response) => {
       if(response) {
-        console.log("Success Upadte");
+        console.log("Success Update");
       }
 
       else {

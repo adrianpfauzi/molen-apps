@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { MolenMainService } from '../molen-main.service';
 import { MolenUserService } from '../molen-user.service' ;
-import { ModalController, ToastController, ActionSheetController } from '@ionic/angular';
+import { ModalController, ToastController, ActionSheetController, LoadingController } from '@ionic/angular';
 import { Response } from '@angular/http';
 import { Storage } from '@ionic/storage';
 
@@ -49,7 +49,8 @@ export class BarangAddPage implements OnInit {
     private webView: WebView, 
     //private fileEntry : FileEntry, 
     private filePath : FilePath, 
-    private toastController : ToastController ) { 
+    private toastController : ToastController,
+    private loadingController: LoadingController ) { 
     this.ambildata();
   }
 
@@ -59,9 +60,7 @@ export class BarangAddPage implements OnInit {
   ambildata() {
     this.storage.get(TOKEN_KEY).then((data) => {
       this.email = data.email;
-
       this.loadProfile(this.email);
-      console.log(this.email);
     });
   }
 
@@ -88,6 +87,8 @@ export class BarangAddPage implements OnInit {
   loadProfile(email) {
     this.molenUser.loadUserProfie(email).subscribe((response: Response) => {
       this.userProf = response.json();
+      this.data.iduser = this.userProf[0].id_user;
+      this.data.pemilik = this.userProf[0].nama;
     })
   }
 
@@ -234,6 +235,11 @@ export class BarangAddPage implements OnInit {
   }
 
   async uploadImageData(formData: FormData) {
+    const loading = await this.loadingController.create({
+      //content: 'Uploading image....',
+    });
+    await loading.present();
+
 
   }
 

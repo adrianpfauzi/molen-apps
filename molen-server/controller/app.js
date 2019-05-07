@@ -136,10 +136,11 @@ app.post('/api/molen/user/login/', linkencParser, jsonParser,function(req,res) {
 
     user.loginUser(email,password, function(err,result){
         if(!err) {
-            console.log(result);
-            res.send('Login Success');
+            if(result.length > 0)
+            {
+                res.send('Login Success');
+            }
         }
-
         else {
             console.log(err);
             res.send(err);

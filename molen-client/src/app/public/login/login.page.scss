@@ -1,3 +1,12 @@
-#ion-toolbar {
-    background-color: aqua;
+ion-content {
+    --ion-background-color: #022445;
+}
+
+ion-item {
+    --background: #022445;
+    --color: #fff;
+}
+
+.judul {
+    color: #fff;
 }

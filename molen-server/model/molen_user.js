@@ -114,11 +114,10 @@ var molenUserDB = {
             }
 
             else {
-                console.log("Connected Login");
+                console.log("Login");
                 var sql = 'SELECT email,password FROM user_acc WHERE `email` = ? AND `password` = ?';
                 conn.query(sql, [email,password], function(err,result) {
                     conn.release();
-
                     if(err) {
                         console.log(err);
                         return callback(err,null);
@@ -126,7 +125,10 @@ var molenUserDB = {
 
                     else {
                         console.log(result);
-                        return callback(null,result);
+                        if(result.length > 0)
+                        {
+                            return callback(null,result);
+                        }
                     }
                 });
             }
