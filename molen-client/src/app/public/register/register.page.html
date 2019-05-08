@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="secondary">
+  <ion-toolbar color="blue">
     <ion-title>Register User</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -23,12 +23,12 @@
 
   <ion-item>
     <ion-label position="stacked">Tanggal Lahir</ion-label>
-    <ion-input type="date" display="MM/DD/YYYY" [(ngModel)]="data.tgl_lahir"></ion-input>
+    <ion-datetime type="date" display="MM/DD/YYYY" [(ngModel)]="data.tgl_lahir"></ion-datetime>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Nomor Telepon</ion-label>
-    <ion-input type="text" [(ngModel)]="data.no_telp"></ion-input>
+    <ion-input type="number" [(ngModel)]="data.no_telp"></ion-input>
   </ion-item>
 
   <ion-item>
@@ -46,5 +46,5 @@
     <ion-input type="text" [(ngModel)]="data.provinsi"></ion-input>
   </ion-item>
 
-  <ion-button expand="block" color="secondary" (click)="addUser()">Register</ion-button>
+  <ion-button expand="block" color="blue" (click)="addUser()">Sign Up</ion-button>
 </ion-content>

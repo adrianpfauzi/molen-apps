@@ -59,7 +59,7 @@ export class BarangAddPage implements OnInit {
 
   ambildata() {
     this.storage.get(TOKEN_KEY).then((data) => {
-      this.email = data.email;
+      this.email = data;
       this.loadProfile(this.email);
     });
   }

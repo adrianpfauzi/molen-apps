@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
   login() {
     this.molenUser.loginUser(this.logUser).subscribe((response: Response) => {
       if(response) {
-        this.molenUser.login(this.logUser);
+        this.molenUser.login(this.logUser.email);
         console.log(response);
         console.log(this.logUser);
       }
@@ -53,7 +53,4 @@ export class LoginPage implements OnInit {
   public registerPage() {
     this.router.navigate(["/register"]);
   }
-
-
-
 }

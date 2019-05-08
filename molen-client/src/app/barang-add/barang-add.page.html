@@ -7,14 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-
-
 <ion-content padding  *ngFor="let user of userProf">
-      <ion-item>
-            <ion-label position="stacked">Nomor ID Pemilik</ion-label>
-            <ion-input [(ngModel)]="data.iduser" value="{{user.id_user}}" readonly></ion-input>
-      </ion-item>
-
       <ion-item>
           <ion-label position="stacked">Pemilik</ion-label>
           <ion-input [(ngModel)]="data.pemilik" value="{{user.nama}}" readonly></ion-input>

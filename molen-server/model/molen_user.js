@@ -10,7 +10,7 @@ var molenUserDB = {
 
             else {
                 console.log("Connected");
-                var sql = 'SELECT * FROM user_acc';
+                var sql = 'SELECT email,nama,tgl_lahir,alamat,kota,provinsi,no_telp FROM user_acc';
 
                 conn.query(sql, function (err, result) {
                     conn.release();
@@ -37,7 +37,7 @@ var molenUserDB = {
 
             else {
                 console.log("Connected");
-                var sql = 'SELECT * FROM user_acc WHERE `email` = ?';
+                var sql = 'SELECT id_user,email,nama,tgl_lahir,alamat,kota,provinsi,no_telp FROM user_acc WHERE `email` = ?';
 
                 conn.query(sql,[email],function (err, result) {
                     conn.release();

@@ -4,11 +4,11 @@
   </ion-split-pane> -->
   <ion-menu>
     <ion-header>
-      <ion-toolbar color="primary">
-        <ion-title>Menu</ion-title>
+      <ion-toolbar color="blue">
+        <!--<ion-title>Menu</ion-title>-->
       </ion-toolbar>
     </ion-header>
-    <ion-content>
+    <ion-content padding scroll-y="false">
       <ion-list>
         <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
           <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
@@ -18,12 +18,11 @@
             </ion-label>
           </ion-item>
         </ion-menu-toggle>
-        <ion-item (click) = logOut()>
-            <ion-icon slot="start" name="arrow-round-back"></ion-icon>
-            <ion-label>Logout</ion-label>
-          </ion-item>
       </ion-list>
     </ion-content>
+      <ion-item (click) = logOut()>
+        <ion-label>Logout</ion-label>
+      </ion-item>
   </ion-menu>
   <ion-router-outlet main></ion-router-outlet>
 </ion-app>

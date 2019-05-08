@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'start',
     pathMatch: 'full'
   },
   {
@@ -27,7 +27,8 @@ const routes: Routes = [
   { path: 'register', loadChildren: './public/register/register.module#RegisterPageModule' },
   { path: 'komentar-add', loadChildren: './komentar-add/komentar-add.module#KomentarAddPageModule' },
   { path: 'komentar-update', loadChildren: './komentar-update/komentar-update.module#KomentarUpdatePageModule' },
-  { path: 'profile-update', loadChildren: './profile-update/profile-update.module#ProfileUpdatePageModule' }
+  { path: 'profile-update', loadChildren: './profile-update/profile-update.module#ProfileUpdatePageModule' },
+  { path: 'start', loadChildren: './public/start/start.module#StartPageModule' }
 ];
 
 @NgModule({

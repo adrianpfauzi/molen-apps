@@ -23,6 +23,7 @@ export class AppComponent {
       url:'/profile',
       icon:'person'
     },
+
     {
       title:'About',
       url:'/about',
@@ -49,14 +50,18 @@ export class AppComponent {
 
     this.molenUser.authenticationState.subscribe(state => {
       console.log(state);
-
       if(state) {
         this.router.navigate(['/home']);
         this.menuCtrl.enable(true);
       }
 
-      else {
+      else if(state == false){
         this.router.navigate(['/login']);
+        this.menuCtrl.enable(false);
+      }
+
+      else {
+        this.router.navigate(['/start']);
         this.menuCtrl.enable(false);
       }
     });
