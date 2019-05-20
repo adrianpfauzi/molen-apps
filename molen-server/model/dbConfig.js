@@ -1,8 +1,8 @@
 var mysql = require('mysql');
 var dbconnect = mysql.createPool({
-    host:"localhost",
+    host:"192.168.0.109",
     user:"root",
-    password:"",
+    password:"123456",
     database:"molendb"
 });
 

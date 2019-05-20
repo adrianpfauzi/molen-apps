@@ -35,6 +35,7 @@ var molenUserDB = {
                 return callback(err,null);
             }
 
+            //str_to_date(LoginDate,'%d.%m.%Y') as DateFormat
             else {
                 console.log("Connected");
                 var sql = 'SELECT id_user,email,nama,tgl_lahir,alamat,kota,provinsi,no_telp FROM user_acc WHERE `email` = ?';
@@ -55,7 +56,7 @@ var molenUserDB = {
         });
     },
 
-    addUser: function(email, password, nama,tgl_lahir,alamat,kota,provinsi,no_telp,callback)
+    addUser: function(email, password, nama,tgl_lahir,alamat,kota,provinsi,no_telp,callback) // Menambah user
     {
         pool.getConnection(function(err,conn){
             if(err) {
@@ -81,7 +82,7 @@ var molenUserDB = {
         });
     },
 
-    updateUser:function(email,password,nama,id_user,tgl_lahir,alamat,kota,provinsi,no_telp,callback) {
+    updateUser:function(id_user,nama,tgl_lahir,alamat,kota,provinsi,no_telp,callback) { //merubah data user
         pool.getConnection(function(err,conn){
             if(err) {
                 console.log(err);
@@ -89,8 +90,8 @@ var molenUserDB = {
             }
 
             else {
-                var sql = 'UPDATE user_acc SET `email` = ?, `nama` = ?, `password`=?, `tgl_lahir` =? ,`alamat` = ?,`kota` = ? ,`provinsi` = ?,`no_telp` = ? WHERE id_user =?';
-                conn.query(sql, [email,nama,id_user,password,tgl_lahir,alamat,kota,provinsi,no_telp], function(err,result) {
+                var sql = 'UPDATE user_acc SET `nama` = ?, `tgl_lahir` =? ,`alamat` = ?,`kota` = ? ,`provinsi` = ?,`no_telp` = ? WHERE id_user =?';
+                conn.query(sql, [nama,tgl_lahir,alamat,kota,provinsi,no_telp,id_user], function(err,result) {
                     conn.release();
                     if(err) {
                         console.log(err);
@@ -106,7 +107,7 @@ var molenUserDB = {
         });
     },
 
-    loginUser:function(email,password,callback) {
+    loginUser:function(email,password,callback) { //melakukan autentikasi
         pool.getConnection(function(err,conn) {
             if(err) {
                 console.log(err);
@@ -114,7 +115,7 @@ var molenUserDB = {
             }
 
             else {
-                console.log("Login");
+                console.log("Login Success");
                 var sql = 'SELECT email,password FROM user_acc WHERE `email` = ? AND `password` = ?';
                 conn.query(sql, [email,password], function(err,result) {
                     conn.release();

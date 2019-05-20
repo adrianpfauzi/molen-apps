@@ -42,7 +42,7 @@ export class ProfilePage implements OnInit {
     const modal = await this.modalCtrl.create({
       component: ProfileUpdatePage, componentProps:{value: userProf}
     });
-    //modal.onDidDismiss().then(()=> {this.loadProfile(userProf) });
+    modal.onDidDismiss().then(()=> {this.ambildata() });
     return await modal.present();
   }
 

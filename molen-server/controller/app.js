@@ -42,7 +42,7 @@ app.get('/api/molen/barang',function(req, res){ // Menampilkan list barang
     });
 });
 
-app.post('/api/molen/barang', linkencParser, jsonParser, function(req,res){ //insert data barang
+app.post('/api/molen/barang', linkencParser, jsonParser, function(req,res){ //menambah data barang
     var iduser = req.body.iduser;
     var nama = req.body.nama;
     var pemilik = req.body.pemilik;
@@ -64,7 +64,7 @@ app.post('/api/molen/barang', linkencParser, jsonParser, function(req,res){ //in
     })
 })
 
-app.post('/api/molen/barang/:idbarang', linkencParser, jsonParser, function(req,res){ //update data barang
+app.post('/api/molen/barang/:idbarang', linkencParser, jsonParser, function(req,res){ //merubah data barang
     var idbarang = req.params.idbarang;
     var nama = req.body.nama;
     var no_telp = req.body.no_telp;
@@ -100,20 +100,6 @@ app.delete('/api/molen/barang/:idbarang',function(req,res){ //delete data barang
             res.send(err.code);
         }
     })
-})
-
-app.get('/api/molen/lapak/', function(req,res) {
-    lapak.getListLapak(function(err,result){
-        if(!err){
-            console.log(result);
-            res.send(result);
-        }
-
-        else {
-            console.log(err);
-            res.send(err);
-        }
-    });
 })
 
 app.get('/api/molen/user/list', function(req,res) {
@@ -237,7 +223,7 @@ app.get('/api/molen/user/:email/profile',function(req,res) {
     })
 })
 
-app.post('/api/molen/user', linkencParser, jsonParser, function(req,res){ //insert data barang
+app.post('/api/molen/user', linkencParser, jsonParser, function(req,res){ //insert data user
     //email, password, nama,tgl_lahir,alamat,kota,provinsi,no_telp,
     var email = req.body.email;
     var password = req.body.password;
@@ -261,11 +247,8 @@ app.post('/api/molen/user', linkencParser, jsonParser, function(req,res){ //inse
     })
 })
 
-app.post('/api/molen/user/:id_user/', linkencParser, jsonParser, function(req,res){ //insert data barang
-    //email, password, nama,tgl_lahir,alamat,kota,provinsi,no_telp,
+app.post('/api/molen/user/:id_user', linkencParser, jsonParser, function(req,res){ //merubah data user
     var id_user = req.params.id_user;
-    var email = req.body.email;
-    var password = req.body.password;
     var nama = req.body.nama;
     var tgl_lahir = req.body.tgl_lahir;
     var alamat = req.body.alamat;
@@ -273,7 +256,7 @@ app.post('/api/molen/user/:id_user/', linkencParser, jsonParser, function(req,re
     var provinsi = req.body.provinsi;
     var no_telp = req.body.no_telp;
    
-    user.updateUser(email, password, nama, id_user,tgl_lahir,alamat,kota,provinsi,no_telp, function(err,result){
+    user.updateUser(id_user,nama,tgl_lahir,alamat,kota,provinsi,no_telp, function(err,result){
         if(!err) {
             console.log(result);
             res.send(result.affectedRows + ' Data Terupdate');

@@ -46,23 +46,23 @@ export class MolenUserService {
 
 
   loadUser() {
-    return this.http.get('http://localhost:8081/api/molen/user');
+    return this.http.get('http://192.168.0.109:8081/api/molen/user');
   }
 
   loginUser(logUser) {
-    return this.http.post('http://localhost:8081/api/molen/user/login',logUser);
+    return this.http.post('http://192.168.0.109:8081/api/molen/user/login',logUser);
   }
 
   loadUserProfie(email) {
-    return this.http.get('http://localhost:8081/api/molen/user/'+email+'/profile');
+    return this.http.get('http://192.168.0.109:8081/api/molen/user/'+email+'/profile');
   }
 
   insertUser(data) {
-    return this.http.post('http://localhost:8081/api/molen/user',data);
+    return this.http.post('http://192.168.0.109:8081/api/molen/user',data);
   }
 
   updateUser(data) {
-    return this.http.post('http://localhost:8081/api/molen/user/'+data.id_user,data);
+    return this.http.post('http://192.168.0.109:8081/api/molen/user/'+data.id_user,data);
   }
 
   ///api/molen/user/:id_user/
