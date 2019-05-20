@@ -1,5 +1,5 @@
 # molen-apps
-Aplikasi marketplace untuk mempertemukan antara pemilik barang bekas yang ingin dijual atau disedekahkan dengan pencari barang bekas baik yang ingin membelinya maupun menerima dengan cuma - cuma.
+Aplkasi Molen ( Moelong Onlen ) adalah aplikasi marketplace untuk mempertemukan antara pemilik barang bekas yang ingin dijual atau disedekahkan dengan pencari barang bekas baik yang ingin membelinya maupun menerima dengan cuma - cuma.
 
 Kelompok 7
 Adrian Priabdi Fauzi - 4311711001
